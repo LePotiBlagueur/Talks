@@ -52,8 +52,7 @@ vault write auth/vault-secret-operator/config \
       token_reviewer_jwt="$TOKEN_REVIEW_JWT" \
       kubernetes_host="$KUBE_HOST" \
       kubernetes_ca_cert="$KUBE_CA_CERT" \
-      disable_issuer_verification=true
-
+      
 # On créé la policy
 vault policy write vault-secret-operator ./policy.hcl
 
