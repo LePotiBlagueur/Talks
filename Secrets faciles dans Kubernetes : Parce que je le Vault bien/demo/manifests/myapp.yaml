@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  namespace: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: my-super-secret
+      containers:
+        - name: myapp
+          image: alpine:latest
+          command:
+            ['sh', '-c']
+          args:
+            ['echo -e "Mon user est :\n" ; cat /secret/mot-de-passe-top-secret/username ; echo -e "\n" ; echo -e "Mon mdp à absolument ne pas faire fuiter est :\n" ; cat /secret/mot-de-passe-top-secret/password ; echo -e "\n" ; sleep 3600']
+          ports:
+            - containerPort: 9090
+          volumeMounts:
+            - name: secret-volume
+              readOnly: true
+              mountPath: "/secret/mot-de-passe-top-secret"
