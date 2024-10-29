@@ -16,7 +16,7 @@ This repository is a collection of talks and presentations on various subjects. 
 
 ## Talks
 
-1. [Secrets faciles dans Kubernetes : Parce que je le Vault bien](Secrets%20faciles%20dans%20Kubernetes%20%3A%20Parce%20que%20je%20le%20Vault%20bien/README.md)
+1. [Secrets faciles dans Kubernetes : Parce que je le Vault bien](Secrets%20faciles%20dans%20Kubernetes%20%3A%20Parce%20que%20je%20le%20Vault%20bien)
 
 
 ## License
