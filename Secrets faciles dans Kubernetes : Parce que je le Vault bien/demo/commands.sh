@@ -37,6 +37,10 @@ helm install vault hashicorp/vault \
 # On expose le port 8200
 kubectl port-forward pod/vault-0 8200 &
 
+# On exporte nos variables VAULT_ADDR et VAULT_TOKEN
+export VAULT_ADDR=http://localhost:8200
+export VAULT_TOKEN="root"
+
 # On créé le Secret Engine
 vault secrets enable -path=kvv2 kv-v2
 
