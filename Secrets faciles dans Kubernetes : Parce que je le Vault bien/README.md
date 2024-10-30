@@ -9,6 +9,7 @@ This directory contains resources and materials for the talk "Secrets faciles da
   - [Introduction](#introduction)
   - [Abstract](#abstract)
   - [Demo](#demo)
+    - [Prerequisites](#prerequisites)
     - [Commands](#commands)
     - [Manifests](#manifests)
   - [Presentation](#presentation)
@@ -29,6 +30,13 @@ Ce talk est destiné aux développeurs, aux ingénieurs DevOps/Sre/Platform et �
 ## Demo
 
 The demo directory contains scripts and manifests used in the presentation.
+
+### Prerequisites
+
+- [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)
+- [helm](https://helm.sh/docs/intro/install/)
+- (OPTIONAL)[vault cli](https://developer.hashicorp.com/vault/tutorials/getting-started/getting-started-install#install-vault)
+- (OPTIONAL)[minikube](https://minikube.sigs.k8s.io/docs/start)
 
 ### Commands
 
