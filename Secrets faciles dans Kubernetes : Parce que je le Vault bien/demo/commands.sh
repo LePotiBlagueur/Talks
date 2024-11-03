@@ -31,11 +31,10 @@ helm repo add hashicorp https://helm.releases.hashicorp.com
 helm repo update
 
 # On créé un Vault
-helm install vault hashicorp/vault \ 
-    --set "server.dev.enabled=true"
+helm install vault hashicorp/vault --set "server.dev.enabled=true"
 
 # On expose le port 8200
-kubectl port-forward pod/vault-0 8200 &
+kubectl port-forward pod/vault-0 8200 2&1> /dev/null &
 
 # On exporte nos variables VAULT_ADDR et VAULT_TOKEN
 export VAULT_ADDR=http://localhost:8200
@@ -45,7 +44,7 @@ export VAULT_TOKEN="root"
 vault secrets enable -path=kvv2 kv-v2
 
 # On créé le secret
-vault kv put kvv2/demo/config password="password" 
+vault kv put kvv2/demo/config username="user_rw" password="password" 
 
 ## Dans Vault
 # On créé l'authent Kube
@@ -55,10 +54,10 @@ vault auth enable -path vault-secret-operator kubernetes
 vault write auth/vault-secret-operator/config \
       token_reviewer_jwt="$TOKEN_REVIEW_JWT" \
       kubernetes_host="$KUBE_HOST" \
-      kubernetes_ca_cert="$KUBE_CA_CERT" \
+      kubernetes_ca_cert="$KUBE_CA_CERT" 
       
 # On créé la policy
-vault policy write vault-secret-operator ./policy.hcl
+vault policy write vault-secret-operator ./manifests/policy.hcl
 
 # On applique la policy à notre authent Kubernetes
 vault write auth/vault-secret-operator/role/default bound_service_account_names=operator-auth bound_service_account_namespaces="*" policies=vault-secret-operator
