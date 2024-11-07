@@ -13,6 +13,7 @@ This directory contains resources and materials for the talk "Secrets faciles da
     - [Commands](#commands)
     - [Manifests](#manifests)
   - [Presentation](#presentation)
+  - [Talk venues](#talk-venues)
   - [License](#license)
 
 ## Introduction
@@ -59,6 +60,10 @@ The presentation files are available in PDF, ODP and PPTX formats:
 - [Secrets faciles dans Kubernetes _ Parce que je le Vault bien.pdf](Secrets%20faciles%20dans%20Kubernetes%20_%20Parce%20que%20je%20le%20Vault%20bien.pdf)
 - [Secrets faciles dans Kubernetes _ Parce que je le Vault bien.odp](Secrets%20faciles%20dans%20Kubernetes%20_%20Parce%20que%20je%20le%20Vault%20bien.odp)
 - [Secrets faciles dans Kubernetes _ Parce que je le Vault bien.pptx](Secrets%20faciles%20dans%20Kubernetes%20_%20Parce%20que%20je%20le%20Vault%20bien.pptx)
+
+## Talk venues
+
+- BDX/IO 2024 
 
 ## License
 
